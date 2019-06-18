@@ -43,7 +43,6 @@ class AddDeck extends React.Component{
         saveDeck(deckId, newDeck) //save deck in asyncstorage
     }
 
-    // from https://github.com/AdithyaBhat17/udacity-fitness-app/blob/master/components/AddEntry.js line 95.
     toDeck = (id, title) => {
         this.props.navigation.navigate('Deck', {deckId: id, deckName: title})
     }
