@@ -6,8 +6,6 @@ import { connect } from 'react-redux'
 import { white, black, orange } from '../utils/colors'
 import { Alert } from 'react-native';
 
-// similar to the fitness app's AddEntry component
-// TODO : Refactor
 SubmitBtn = ({ onPress }) => {
     return (
         <TouchableOpacity
