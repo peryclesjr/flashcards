@@ -17,4 +17,3 @@ const styles = StyleSheet.create({
     }
 })
 
-//implemented from the fitness app.
