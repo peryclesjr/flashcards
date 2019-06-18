@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { black, white } from '../utils/colors'
+import { black, white, orange, lightGray } from '../utils/colors'
 import { withNavigation } from 'react-navigation'
 
 function Score(props){
@@ -13,17 +13,17 @@ function Score(props){
             <Text style={styles.score}>{Math.round((correct/deck.questions.length)*100)}%</Text>
 
             <TouchableOpacity
-             style={[styles.btn, {backgroundColor: black, marginTop: 25}]}
+             style={[styles.btn, {backgroundColor: orange, marginTop: 25}]}
              onPress={restart}
             >
                 <Text style={styles.btnText}>Restart Quiz</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-             style={[styles.btn, {backgroundColor: white, marginTop: 25}]}
+             style={[styles.btn, {backgroundColor: black, marginTop: 25}]}
              onPress={() => navigation.navigate('Deck', {deckId: deckId, deckName: deck.title})}
             >
-                <Text style={[styles.btnText, {color: black}]}>Back to Deck</Text>
+                <Text style={[styles.btnText, {color: white}]}>Back to Deck</Text>
             </TouchableOpacity>
         </View>
     )
@@ -40,17 +40,18 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 0,
+        borderRadius: 15,
         borderColor: black,
         borderWidth: 1,
         padding: 15,
         marginTop: 17,
         marginLeft: 10,
         marginRight: 10,
+        backgroundColor: orange,
     },
     btnText: {
         color: white,
-        fontSize: 16
+        fontSize: 16,
     },
     score: {
         color: black,

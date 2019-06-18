@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Card from './Card'
 import Score from './Score'
 
+
 class Question extends React.Component{
     constructor(props){
         super(props)

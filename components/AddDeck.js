@@ -3,7 +3,7 @@ import { Text, TextInput, KeyboardAvoidingView, TouchableOpacity, StyleSheet } f
 import { addDeck } from '../actions'
 import { saveDeck } from '../utils/api'
 import { connect } from 'react-redux'
-import { white, black } from '../utils/colors'
+import { white, black, orange } from '../utils/colors'
 import { generateUID } from '../utils/helpers'
 
 // similar to the fitness app's AddEntry component
@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginLeft: 20,
         marginRight: 20,
-        color: black
+        color: black,
+        backgroundColor: white,
     },
     input: {
         width: 250,
@@ -84,16 +85,17 @@ const styles = StyleSheet.create({
         padding: 8,
         borderWidth: 1,
         borderColor: black,
+        borderRadius:15,
         margin: 20
     },
     submitBtn: {
-        backgroundColor: black,
+        backgroundColor: orange,
         padding: 10,
-        borderRadius: 0,
+        borderRadius: 15,
         height: 45,
         marginLeft: 40,
         marginRight: 40,
-        marginBottom: 60
+        marginBottom: 60,
     },
     submitBtnText: {
         color: white,

@@ -3,7 +3,8 @@ import { Text, TextInput, KeyboardAvoidingView, TouchableOpacity, StyleSheet } f
 import { addCard } from '../actions'
 import { saveCard } from '../utils/api'
 import { connect } from 'react-redux'
-import { white, black } from '../utils/colors'
+import { white, black, orange } from '../utils/colors'
+import { Alert } from 'react-native';
 
 // similar to the fitness app's AddEntry component
 // TODO : Refactor
@@ -30,7 +31,7 @@ class AddCard extends React.Component{
         const { question, answer } = this.state
         const { deckId, dispatch } = this.props
         if(question === '' || answer === ''){
-            alert('Please fill in both the input fields')
+            Alert.alert('Please fill in both the input fields')
             return 
         }
 
@@ -83,17 +84,18 @@ const styles = StyleSheet.create({
         height: 44,
         padding: 8,
         borderWidth: 1,
+        borderRadius:15,
         borderColor: black,
         marginBottom: 15
     },
     submitBtn: {
-        backgroundColor: black,
         padding: 10,
-        borderRadius: 0,
+        borderRadius: 15,
         height: 45,
         marginLeft: 40,
         marginRight: 40,
-        marginBottom: 100
+        marginBottom: 100,
+        backgroundColor: orange,
     },
     submitBtnText: {
         color: white,

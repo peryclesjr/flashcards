@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { black, white, gray } from '../utils/colors'
+import { black, white, gray, orange } from '../utils/colors'
 import { connect } from 'react-redux'
 import Deck from './Deck'
 import { withNavigation } from 'react-navigation'
@@ -24,17 +24,17 @@ class DeckList extends React.Component {
 const styles = StyleSheet.create({
     title: {
         fontSize: 30,
-        color: black
+        color: white
     },
     count: {
         marginTop: 10,
         fontSize: 22,
-        color: gray
+        color: black
     },
     item: {
-        backgroundColor: white,
-        borderRadius: 0,
-        borderColor: black,
+        backgroundColor: orange,
+        borderRadius: 25,
+        borderColor: white,
         borderWidth: 1,
         padding: 15,
         marginLeft: 10,

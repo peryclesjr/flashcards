@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native'
 import { connect } from 'react-redux'
-import { black, gray, white } from '../utils/colors'
+import { black, gray, white,orange } from '../utils/colors'
 
 class Deck extends React.Component{
     constructor(props){
@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     btn: {
         width: 150,
         height: 50,
-        backgroundColor: white,
-        borderRadius: 0,
+        backgroundColor: orange,
+        borderRadius: 15,
         borderColor: black,
         borderWidth: 1,
         padding: 15,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
     btnText: {
         fontSize: 16,
-        color: black
+        color: white
     }
   })
   
