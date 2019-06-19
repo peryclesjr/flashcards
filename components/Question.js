@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { black } from '../utils/colors'
-import { clearLocalNotification, setLocalNotification } from '../utils/helpers'
 import { connect } from 'react-redux'
 import Card from './Card'
 import Score from './Score'
