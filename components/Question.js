@@ -17,12 +17,6 @@ class Question extends React.Component{
             incorrect: 0
         }
     }
-
-    componentDidMount(){
-        clearLocalNotification()
-        .then(setLocalNotification)
-    }
-
     restart = () => {
         this.setState({
             index : 0,
