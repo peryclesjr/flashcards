@@ -2,31 +2,43 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { black, white, orange, lightGray } from '../utils/colors'
 import { withNavigation } from 'react-navigation'
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers'
 
-function Score(props){
-    const { correct, incorrect, restart, deck, deckId, navigation } = props
+//function Score(props){
+    class Score extends React.Component{
 
-    return(
-        <View style={styles.center}>
-            <Text style={styles.score}>Correct: {correct}</Text>
-            <Text style={styles.score}>Incorrect: {incorrect}</Text>
-            <Text style={styles.score}>{Math.round((correct/deck.questions.length)*100)}%</Text>
+    componentDidUnMount(){
+        clearLocalNotification()
+        .then(setLocalNotification)
+    }
+   // const { correct, incorrect, restart, deck, deckId, navigation } = props
+    constructor(props){
+        super(props)
+    }
+      
+    render(){
+        return(
+            <View style={styles.center}>
+                <Text style={styles.score}>Correct: {this.props.correct}</Text>
+                <Text style={styles.score}>Incorrect: {this.props.incorrect}</Text>
+                <Text style={styles.score}>{Math.round((this.props.correct/this.props.deck.questions.length)*100)}%</Text>
 
-            <TouchableOpacity
-             style={[styles.btn, {backgroundColor: orange, marginTop: 25}]}
-             onPress={restart}
-            >
-                <Text style={styles.btnText}>Restart Quiz</Text>
-            </TouchableOpacity>
+                <TouchableOpacity
+                style={[styles.btn, {backgroundColor: orange, marginTop: 25}]}
+                onPress={this.props.restart}
+                >
+                    <Text style={styles.btnText}>Restart Quiz</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity
-             style={[styles.btn, {backgroundColor: black, marginTop: 25}]}
-             onPress={() => navigation.navigate('Deck', {deckId: deckId, deckName: deck.title})}
-            >
-                <Text style={[styles.btnText, {color: white}]}>Back to Deck</Text>
-            </TouchableOpacity>
-        </View>
-    )
+                <TouchableOpacity
+                style={[styles.btn, {backgroundColor: black, marginTop: 25}]}
+                onPress={() => this.props.navigation.navigate('Deck', {deckId: this.props.deckId, deckName: this.props.deck.title})}
+                >
+                    <Text style={[styles.btnText, {color: white}]}>Back to Deck</Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
